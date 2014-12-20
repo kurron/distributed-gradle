@@ -19,6 +19,6 @@ dependencies {
 
 configurations*.all {
     // only allows SLF4J
-    exclude group: 'log4j', name: 'log4j'
-    exclude group: 'commons-logging', name: 'commons-logging'
+    exclude group: 'log4j', module: 'log4j'
+    exclude group: 'commons-logging', module: 'commons-logging'
 }
