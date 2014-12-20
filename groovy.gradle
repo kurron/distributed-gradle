@@ -15,4 +15,7 @@ sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 
 compileGroovy.options*.compilerArgs = ['-Xlint:deprecation','-encoding', 'UTF-8']
-compileTestGroovy.options*.compilerArgs = ['-Xlint:deprecation','-encoding', 'UTF-8']
+compileTestGroovy.options*.compilerArgs = ['-Xlint:deprecation','-encoding', 'UjTF-8']
+
+defaultTasks << 'clean'
+defaultTasks << 'build'
