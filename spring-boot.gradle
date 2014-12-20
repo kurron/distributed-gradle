@@ -17,7 +17,7 @@ dependencies {
     testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
 }
 
-dependencies {
+configurations {
     all {
         // only allows SLF4J
         exclude group: 'log4j', name: 'log4j'
