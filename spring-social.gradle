@@ -1,0 +1,5 @@
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-social-facebook:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-social-linkedin:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-social-twitter:${springBootVersion}"
+}
