@@ -17,8 +17,7 @@ dependencies {
     testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
 }
 
-configurations*.all {
-    // only allows SLF4J
-    exclude group: 'log4j', module: 'log4j'
-    exclude group: 'commons-logging', module: 'commons-logging'
+configurations {
+    all*.exclude group: 'log4j', module: 'log4j'
+    all*.exclude group: 'commons-logging', module: 'commons-logging'
 }
