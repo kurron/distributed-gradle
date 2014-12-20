@@ -1,8 +1,10 @@
 apply plugin: 'spring-boot'
 
 dependencies {
-    compile "org.springframework.boot:spring-boot-starter:${springBootVersion}"
     compile "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-aop:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-logging:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter:${springBootVersion}"
     compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
 
     compile "org.springframework:spring-messaging:${springFrameworkVersion}"
