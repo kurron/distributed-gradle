@@ -1,0 +1,6 @@
+repositories {
+    jcenter()
+    maven {
+        url = 'http://repo.spring.io/libs-milestone-local/'
+    }
+}
