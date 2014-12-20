@@ -1,0 +1,28 @@
+// formerly in buildSrc but causes problem when mixed with indy compilation
+
+class ProjectVersion {
+    Integer major
+    Integer minor
+    Integer patch
+    Boolean release
+
+    ProjectVersion( Integer major, Integer minor, Integer patch, Boolean release ) {
+        this.major = major
+        this.minor = minor
+        this.patch = patch
+        this.release = release
+    }
+
+    @Override
+    String toString() {
+        "${major}.${minor}.${patch}${release ? '.RELEASE' : '-SNAPSHOT'}"
+    }
+}
+
+task printVersion() {
+    group = 'Help'
+    description = 'Prints project version'
+    doLast {
+        logger.quiet "Version: ${version}"
+    }
+}
