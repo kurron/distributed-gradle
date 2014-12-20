@@ -19,3 +19,63 @@ compileTestGroovy.options*.compilerArgs = ['-Xlint:deprecation','-encoding', 'Uj
 
 defaultTasks << 'clean'
 defaultTasks << 'build'
+
+ext.sharedManifest = manifest {
+    attributes( 'Implementation-Title': project.name, 'Implementation-Version': project.version )
+}
+
+jar {
+    manifest = project.manifest {
+        from sharedManifest
+    }
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+    manifest = project.manifest {
+        from sharedManifest
+    }
+}
+
+task testSourcesJar(type: Jar, dependsOn: testClasses) {
+    classifier = 'test-sources'
+    from sourceSets.test.allSource
+    manifest = project.manifest {
+        from sharedManifest
+    }
+}
+
+task testBinariesJar(type: Jar, dependsOn: testClasses) {
+    classifier = 'test'
+    from sourceSets.test.output
+    manifest = project.manifest {
+        from sharedManifest
+    }
+}
+
+task groovydocJar(type: Jar, dependsOn: groovydoc) {
+    classifier = 'groovydoc'
+    from project.docsDir.path + '/groovydoc'
+    manifest = project.manifest {
+        from sharedManifest
+    }
+}
+
+groovydoc {
+    docTitle = "docTitle: $project.name $version"
+    footer = "footer: $project.name $version"
+    header = "header: $project.name $version"
+    windowTitle = "windowTitle: $project.name $version"
+    includePrivate = false
+    overview = 'overview.html'
+    use = true
+}
+
+artifacts {
+    archives sourcesJar
+    archives testSourcesJar
+    archives testBinariesJar
+    archives groovydocJar
+}
+
