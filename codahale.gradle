@@ -1,0 +1,5 @@
+
+dependencies {
+    compile "com.codahale.metrics:metrics-core:${codahaleVersion}"
+    compile "com.codahale.metrics:metrics-servlets:${codahaleVersion}"
+}

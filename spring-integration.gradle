@@ -1,0 +1,4 @@
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-integration:${springBootVersion}"
+    compile "org.springframework.integration:spring-integration-amqp:${springIntegrationVersion}"
+}
