@@ -1,0 +1,12 @@
+task printStage() {
+    group = 'Help'
+    description = 'Displays whether or not Gradle thinks we are running on a CI server.'
+    doLast {
+        logger.quiet "On Build Server: ${onBuildServer}"
+    }
+}
+
+apply plugin: 'project-report'
+apply plugin: 'build-announcements'
+
+defaultTasks << 'projectReport'
