@@ -10,9 +10,9 @@ publishing {
                 from components.java
             }
             artifact sourcesJar
-            artifact testSourcesJar
-            artifact testBinariesJar
-            artifact groovydocJar
+//          artifact testSourcesJar
+//          artifact testBinariesJar
+//          artifact groovydocJar
         }
     }
 
