@@ -18,7 +18,17 @@ publishing {
 
     repositories {
         maven {
-            url "$buildDir/maven-repository"
+            if ( 'true' == publishToRepository ) {
+                name 'Bintray'
+                url "$bintrayBaseUri/$bintrayUsername/$bintrayRepository/$bintrayPackage"
+                credentials {
+                    username = bintrayUsername
+                    password = bintrayApiKey
+                }
+            }
+            else {
+                url "$buildDir/maven-repository"
+            }
         }
     }
 
