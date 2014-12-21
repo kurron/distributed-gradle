@@ -1,5 +1,6 @@
 // formerly in buildSrc but causes problem when mixed with indy compilation
 
+/*
 class ProjectVersion {
     Integer major
     Integer minor
@@ -18,6 +19,7 @@ class ProjectVersion {
         "${major}.${minor}.${patch}${release ? '.RELEASE' : '-SNAPSHOT'}"
     }
 }
+*/
 
 task printVersion() {
     group = 'Help'
